@@ -1,0 +1,54 @@
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+		<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+        <meta name="description" content="{{ site.description }}">
+
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+		<link rel="stylesheet" href="{{site.baseurl}}/css/reveal.css">
+
+
+		{% if page.theme == "beige" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/beige.css">
+		{% elsif page.theme == "black" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/black.css">	
+		{% elsif page.theme == "blood" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/blood.css">
+		{% elsif page.theme == "league" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/league.css">
+		{% elsif page.theme == "moon" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/moon.css">
+		{% elsif page.theme == "night" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/night.css">
+		{% elsif page.theme == "serif" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/serif.css">
+		{% elsif page.theme == "simple" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/simple.css">
+		{% elsif page.theme == "sky" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/sky.css">
+		{% elsif page.theme == "solarized" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/solarized.css">
+		{% elsif page.theme == "white" %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/white.css">
+		{% else %}
+		<link rel="stylesheet" href="{{site.baseurl}}/css/theme/blood.css">
+        {% endif %}
+
+
+		<link rel="stylesheet" href="{{site.baseurl}}/lib/css/zenburn.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/favicon.ico" />
+
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( {{site.baseurl}}/print-pdf/gi ) ? '{{site.baseurl}}/css/print/pdf.css' : '{{site.baseurl}}/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
